@@ -25,11 +25,27 @@
 
     <section>
       <h2>Section mit cards</h2>
-      <div class="card-wrapper">
-        {{> card title="Card title 1" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, quis laudantium. Eos ea deserunt blanditiis aliquid quam tempore alias quos rem quas laborum, dicta natus nesciunt dolorum reprehenderit quaerat culpa."}}
-        {{> card title="Card title 2" description="Desc 2"}}
-        {{> card title="Card title 3" description="Desc 3"}}
-        {{> card title="Card title 4" description="Desc 4"}}
+      <div class="container card-wrapper">
+        {{> card
+          title="Card title 1"
+          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, quis laudantium."
+          image="http://placekitten.com/200/300"
+        }}
+        {{> card
+          title="Card title 2"
+          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, quis laudantium."
+          image="http://placekitten.com/50/50"
+        }}
+        {{> card
+          title="Card title 3"
+          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, quis laudantium."
+          image="http://placekitten.com/75/75"
+        }}
+        {{> card 
+          title="Card title 4"
+          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, quis laudantium."
+          image="http://placekitten.com/150/150"
+        }}
       </div>
     </section>
   </main>
