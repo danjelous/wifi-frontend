@@ -1,0 +1,5 @@
+/* node_modules, können ohne slash (/) etc importiert werden */
+@import 'bootstrap';
+
+/* Lokale files via . (relativ) referenzieren */
+@import './card.css';
