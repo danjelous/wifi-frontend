@@ -7,5 +7,5 @@ $ npm run dev
 
 To build resources run
 ```
-$ npm run dev
+$ npm run build
 ```

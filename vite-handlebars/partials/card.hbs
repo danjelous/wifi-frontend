@@ -1,8 +1,25 @@
 <div class="card">
-  <img class="card-img-top" src="{{ image }}" alt="Card image cap">
+
+  {{!-- Abfrage ob ein image vorhanden ist --}}
+  {{#if image}}
+  {{!-- Ja ist es, dann gib es aus --}}
+  <img class="card-img-top" src="{{image}}" alt="Card image cap">
+  {{else}}
+  {{!-- Wenn das image nicht vorhanden ist, mache das --}}
+
+  {{!-- Variante 1: Fehler ausgaben --}}
+  {{!-- <p class="text-danger">Image-Pfad fehlt!</p> --}}
+
+  {{!-- Variante 2: Nichts machen, Fehler 'ignorieren' --}}
+
+  {{!-- Variante 3: Fallback; Vordefiniertes Bild als --}}
+  {{!-- Vite erwartet Bilder im public folder, darum Referenz nur via root (/) --}}
+  <img class="card-img-top" src="/puppy.jpeg" alt="Young puppy smiling happily at you">
+  {{/if}}
+  
   <div class="card-body">
-    <h5 class="card-title">{{ title }}</h5>
-    <p class="card-text">{{ description }}</p>
+    <h5 class="card-title">{{title}}</h5>
+    <p class="card-text">{{description}}</p>
     <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
 </div>
