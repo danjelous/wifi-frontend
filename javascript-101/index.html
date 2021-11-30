@@ -15,6 +15,16 @@
     <h1>JavaScript - here it comes!</h1>
   </main>
 
+  <h2>Mein Array:</h2>
+  <code id="arrayToUpdate"></code>
+
+  <label for="addInput">Wert zum Array hinzufügen</label>
+  <div>
+    <input id="addInput" type="text" placeholder="Wert zum Hinzufügen">
+  </div>
+
+  <button onclick="addValueToArray()">Hinzufügen</button>
+
   <!-- Variante 1: Synchron
     JS vor dem Ende des schließenden </body>-Tags laden 
     Kann Ladezeit negativ beeinflussen -->
@@ -26,7 +36,7 @@
 
   <!-- Variante 3: defer
     JS-File verzögert laden und verzögert ausführen -->
-  <script defer src="functions/exercises.js"></script>
+  <script defer src="functions/dom.js"></script>
 </body>
 
 </html>
