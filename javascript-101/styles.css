@@ -15,6 +15,7 @@ button[type=submit] {
 code {
   display: block;
   margin-bottom: 2rem;
+  font-size: 2rem;
 }
 
 input {

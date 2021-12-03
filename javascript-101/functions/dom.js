@@ -1,5 +1,8 @@
 // Leeres array initialisieren
-const array = [1, 2, 3];
+let array = ["R", "E", "S", "P", "E", "C", "T"];
+
+// Zweites array um methoden wie concat zu testen
+const arrayToAdd = ["add", "other", "stuff"]
 
 // HTML setzen
 updateHTML(array)
@@ -22,6 +25,23 @@ function addValueToArray() {
 
   // Wert zurücksetzen
   res.value = '';
+}
+
+function concatArrays() {
+  array = array.concat(arrayToAdd);
+  updateHTML(array);
+}
+
+function reverseArray() {
+  // Ändert order von erst zu letzt usw.
+  array.reverse();
+  updateHTML(array);
+}
+
+function joinArray() {
+  const delimiter = " "
+  console.log(array.join(delimiter));
+  array.spl
 }
 
 function updateHTML(html) {
