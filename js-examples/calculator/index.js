@@ -63,7 +63,13 @@ function evaluateDisplay() {
   // eval("alert('wuheueh')")
 
   // Für unser unbetuchtes Beispiel können wir eval aber *ausnahmsweise* verwenden...
-  const res = eval(display.innerText);
+  let res = eval(display.innerText);
+
+  // Wenn sehr viele Nachkommastellen vorhanden sind runden, sonst nicht
+  if(!Number.isInteger(res)) {
+    res = res.toFixed(2);
+  }
+
   updateDisplay(res);
 }
 
