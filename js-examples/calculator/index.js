@@ -65,6 +65,12 @@ function evaluateDisplay() {
   // Für unser unbetuchtes Beispiel können wir eval aber *ausnahmsweise* verwenden...
   let res = eval(display.innerText);
 
+  // Checken ob Wert evaluiert werden konnte
+  if(typeof res === "undefined") {
+    // Wenn nicht, setze auf 0 zurück
+    res = 0;
+  }
+
   // Wenn sehr viele Nachkommastellen vorhanden sind runden, sonst nicht
   if(!Number.isInteger(res)) {
     res = res.toFixed(2);
