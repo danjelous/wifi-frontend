@@ -32,9 +32,23 @@ async function fetchKitties() {
   return data;
 }
 
-function renderKitties(array) {
+function renderKitties(kitties) {
   console.log("In renderKitties")
-  console.log(array)
+
+  // Container holen
+  const container = document.querySelector("#kitten");
+
+  // Alle Objekte durchlaufen und <img>-Tag erstellen
+  for(kitty of kitties) {
+    // <img>-Tag erstellen
+    const el = document.createElement("img");
+
+    // "src" Attribut auf Bild-URL setzen
+    el.setAttribute("src", kitty.url);
+
+    // In Container hängen
+    container.append(el);
+  }
 }
 
 // Main Funktion aufrufen
