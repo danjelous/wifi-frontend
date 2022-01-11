@@ -6,6 +6,6 @@ npm install typescript
 
 Typescript-Projekt initialisieren:
 ```bash
-npx typescript --init
+npx tsc --init
 ```
 
