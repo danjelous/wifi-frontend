@@ -11,6 +11,10 @@ const path = require("path");
  */
 const location = path.join(__dirname, "hello.txt");
 
+/**
+ * Im Callback sind zwei Parameter, ein (potentielles) Error-Objekt
+ * und das tatsächliche Ergebnis des readFile-Aufrufs
+ */
 readFile(location, { encoding: "utf8" }, (err, data) => {
   /**
    * "Node.js Classic" - Bei einem Fehler die Programmausführung abbrechen
