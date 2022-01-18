@@ -26,13 +26,12 @@ app.post('/', async (req, res) => {
   const { name } = req.body;
   console.log(`Name is ${name}`);
 
-  let html;
-  res.render('form', { name }, async (err, renderedHtml) => {
+  // Write rendered HTML in opublic folder
+  res.render('form', { name }, async (err, html) => {
     if(err) {
       console.log(err)
+      return;
     }
-    console.log(renderedHtml)
-    html = renderedHtml;
 
     await fs.writeFile(path.join(__dirname, `../public/${name}.html`), html);
   });
