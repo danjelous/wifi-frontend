@@ -1,18 +1,41 @@
 import express from 'express';
+
 import bodyParser from 'body-parser';
+import fs from 'fs/promises';
+import path from 'path';
+
+import { engine } from 'express-handlebars';
 
 const app = express();
 
-app.set('view engine', '')
+// Set Handlebars engine
+app.engine('handlebars', engine());
+app.set('view engine', 'handlebars');
+app.set('views', path.join(__dirname, '../views/'));
 
+// Middleware
+app.use(express.static('public'));
 app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-app.get('/', (req, res) => res.send("YO!"));
+// Routes
+app.get('/', (req, res) => res.send("Hello WIFI 👋"));
 
-app.post('/', (req, res) => {
-  res.json(req.body);
+app.post('/', async (req, res) => {
+  const { name } = req.body;
+  console.log(`Name is ${name}`);
+
+  let html;
+  res.render('form', { name }, async (err, renderedHtml) => {
+    if(err) {
+      console.log(err)
+    }
+    console.log(renderedHtml)
+    html = renderedHtml;
+
+    await fs.writeFile(path.join(__dirname, `../public/${name}.html`), html);
+  });
 });
 
 const PORT = process.env.PORT ?? 3001;
