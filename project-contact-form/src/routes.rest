@@ -1,0 +1,6 @@
+@baseUrl = http://localhost:3001
+
+POST {{baseUrl}}
+Content-Type: application/x-www-form-urlencoded
+
+name=MyMomma&email=a@d.com
